@@ -1,0 +1,11 @@
+services:
+  mba-app:
+    build: .
+    image: market-basket-analysis:latest
+    container_name: mba-streamlit
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
